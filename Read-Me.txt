@@ -1,0 +1,26 @@
+Matlab Read-Me
+
+written by benjamingetraer@gmail.com 08/25/2021
+------------------------------------------------------------
+
+This directory contains Matlab toolboxes useful for dealing with projected data and shapefiles in Matlab, WITHOUT the proprietary Mathworks Mapping Toolbox or needing to bring shapefiles back into a ArcGIS to re-project.
+
+*****************************************************************************************************
+** For more information on toolboxes, run "help frs_map", "help m_map", or "help StatePlaneSystem" **
+*****************************************************************************************************
+
+
+TOOLBOXES:
+frs_map/			mapping toolbox adapting functionality from m_map/ and StatePlaneSystem/ to easily plot Princeton campus GIS data, including shapefiles with NJ State Plane coordinates.
+			Written by Benjamin Getraer, 2021 for Fall 2021 Princeton Geosciences Freshman Seminar.
+			
+m_map/			free, independently developed mapping toolbox for Matlab 
+			Pawlowicz, R., 2020. "M_Map: A mapping package for MATLAB", version 1.4m, [Computer software], available online at www.eoas.ubc.ca/~rich/map.html.
+
+StatePlaneSystem/	free, independently developed toolbox for conversion of State Plane coordinates in Matlab 
+			Markus Penzkofer (2021). State Plane System (USA) (https://www.mathworks.com/matlabcentral/fileexchange/57991-state-plane-system-usa), MATLAB Central File Exchange. Retrieved August 25, 2021.
+
+
+Specifically, for using raster and vector files of Princeton campus data.
+
+A lot of campus GIS data are projected in Transverse Mercator in the NJ State Plane coordinate system with units of US survey feet. These get dealt with by transforming the NJ State Plane coordinates from feet to meters, then from the State Plane to lat/lon using StatePlaneSystem. Vector data can be plotted in (Lon,Lat) with a suitable projection using m_map. frs_map uses the projection of the NJ State Plane Coordinate System (Transverse Mercator centered appropriately) but keeping (Lon,Lat) units/coordinates rather than (Easting,Northing) in survey feet.
